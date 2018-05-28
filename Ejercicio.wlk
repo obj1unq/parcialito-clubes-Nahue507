@@ -1,7 +1,7 @@
 class ClubBarrio{
 	var property socios=#{}
 	var actividadesTotales=#{}
-	var gastoMensual
+	var gastoMensual 
 	var equipos=#{}
 	method esEstrella(jugador)
 	method sancion()
