@@ -32,4 +32,4 @@ object valorParaElPase{
 	method cambiarValor(numero){
 		valor=numero
 	}
-}
+//
