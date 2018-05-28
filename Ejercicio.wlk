@@ -78,13 +78,14 @@ class Jugador inherits Socio{
 	override method esEstrella(jugador){
 		return if(cantidadPartidos>=50){true}else{club.esEstrella(self)}
 	}
-	method transeferir(clubEmisor,clubReceptor){
+	method transeferir(clubEmisor,clubReceptor,equipoNuevo){
 		if(not clubEmisor.sociosDestacados().contains()and not clubEmisor == clubReceptor){
 			clubEmisor.equipos().foreach({equipo=>equipo.plantel().remove(self)})
 			clubEmisor.actividadesTotales().foreach({actividad=>actividad.participantes().remove(self)})
 			cantidadPartidos=0
 			clubEmisor.socios().remove(self)
 			clubReceptor.socios().add(self)
+			equipoNuevo.plantel().add(self)
 			
 		}
 	}
