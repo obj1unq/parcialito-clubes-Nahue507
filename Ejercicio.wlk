@@ -1,7 +1,16 @@
 class ClubBarrio{
-	var perfil
-	method esEstrella()
+	method esEstrella(jugador)
 	
+}
+class ClubProfesional inherits ClubBarrio{
+	override method esEstrella(jugador){
+		return jugador.valorPase()>valorParaElPase.valor()
+	}
+}
+class ClubComunitario inherits ClubBarrio{
+	override method esEstrella(jugador){
+		return jugador.actividades().size()>3
+	}
 }
 class Equipo inherits ClubBarrio{
 	var plantel=#{}
@@ -10,8 +19,8 @@ class Equipo inherits ClubBarrio{
 	}
 class Jugador inherits Socio{
 	var cantidadPartidos
-	var valorPase
-	override method esEstrella(){
+	var property valorPase
+	override method esEstrella(jugador){
 		return cantidadPartidos>=50
 	}
 }
@@ -22,8 +31,8 @@ class Jugador inherits Socio{
 }
 class Socio inherits ClubBarrio{
 	var tiempoEnInstitucion
-	var actividades=#{}	
-	override method esEstrella(){
+	var property actividades=#{}	
+	override method esEstrella(jugador){
 		return tiempoEnInstitucion>20
 	}
 }
@@ -31,5 +40,5 @@ object valorParaElPase{
 	var property valor
 	method cambiarValor(numero){
 		valor=numero
+		}
 	}
-//
