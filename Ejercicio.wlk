@@ -106,6 +106,9 @@ class Jugador inherits Socio{
 	override method evaluacion(){
 		return if(estaSuspendida){0}else{valuacion}
 	}
+	method nuevoOrganizador(socio){
+		organizador=socio
+	}
 }
 class Socio inherits ClubBarrio{
 	var tiempoEnInstitucion
